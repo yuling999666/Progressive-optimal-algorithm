@@ -8,7 +8,7 @@ import numpy as np
 import xlrd
 import xlsxwriter
 import matplotlib.pyplot as plt
-def v_z_chazhi(x0,a,n):#库容-水位插值
+def v_z_chazhi(x0,a,n):#Reservoir Capacity-Water Level Interpolation
     for j in range(1,n):
         if x0<=y2[j][a] and x0>y2[j-1][a]:
             return y1[j-1][a]+(x0-y2[j-1][a])*(y1[j][a]-y1[j-1][a])/(y2[j][a]-y2[j-1][a])
@@ -16,7 +16,7 @@ def v_z_chazhi(x0,a,n):#库容-水位插值
             return y1[0][a]
         if x0>y2[n-1][a]:
             return y1[n-1][a]
-def z_v_chazhi(x0,a,n):#水位——库容插值
+def z_v_chazhi(x0,a,n):#Water Level-Reservoir Capacity Interpolation
     for j in range(1,n):
         if x0<=y1[j][a] and x0>y1[j-1][a]:
             return y2[j-1][a]+(x0-y1[j-1][a])*(y2[j][a]-y2[j-1][a])/(y1[j][a]-y1[j-1][a]) 
