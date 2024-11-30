@@ -37,8 +37,8 @@ H1=np.zeros(10)
 stll=np.zeros(3)
 stll[0]=100
 stll[1]=100
-Nzh=np.zeros(10)#保证出力
-yr=np.zeros((200,40))#出力
+Nzh=np.zeros(10)# ensured output capacity
+yr=np.zeros((200,40))# output capacity
 yqx=np.zeros((200,100))
 t=np.zeros(100)
 V=np.zeros((200,40))
@@ -63,7 +63,7 @@ for i in range(0,10):
 for i in range(0,9): 
     y3[i][1]=float(table1.cell_value(i,2))
     y4[i][1]=float(table1.cell_value(i,3))
-# 加载正常蓄水位，死水位，出力
+# Load normal water level, dead water level, and output capacity.
 
 zss[0][0]=2855
 
@@ -91,7 +91,7 @@ Nzh[3]=1200000
 Nzh[4]=826000
 Nzh[5]=2400000
 Nzh[6]=2400000
-def z_q_chazhi(x1,b,n1):#下游水位——发电流量插值
+def z_q_chazhi(x1,b,n1):#Downstream water level - Power generation flow interpolation
     for i in range(1,n1):
         if x1<y4[i][b] and x1>y4[i-1][b]:
             return y3[i-1][b]+(x1-y4[i-1][b])*(y3[i][b]-y3[i-1][b])/(y4[i][b]-y4[i-1][b]) 
@@ -99,7 +99,7 @@ def z_q_chazhi(x1,b,n1):#下游水位——发电流量插值
              return y3[0][b]
         if x1>y4[n1-1][b]:
             return y3[n1-1][b]
-def q_z_chazhi(x1,b,n1):#发电流量——水位插值
+def q_z_chazhi(x1,b,n1):# Power generation flow—— water level interpolation
     for i in range(1,n1):
         if x1<y3[i][b] and x1>y3[i-1][b]:
             return y4[i-1][b]+(x1-y3[i-1][b])*(y4[i][b]-y4[i-1][b])/(y3[i][b]-y3[i-1][b]) 
