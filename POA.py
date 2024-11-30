@@ -28,7 +28,7 @@ y1=np.zeros((200,40))
 y2=np.zeros((200,40))
 y3=np.zeros((200,40))
 y4=np.zeros((200,40))
- 
+# Initialization
 vmin=np.zeros(10)
 vmax=np.zeros(10)
 num=np.zeros((20),dtype=int)
