@@ -193,7 +193,7 @@ def tjsk(x,j,r):
                 N4[j][r]=Nzh[j]
                 qxs1[j][r]=N4[j][r]/8.7/hs[j][r]
             qs[j][r]=qx[j][r]-qxs1[j][r]
-        if qxs1[j][r]>zdq[j]:#大于最大允许流量
+        if qxs1[j][r]>zdq[j]:# Exceeds Maximum Allowable Flow
             qxs1[j][r]=zdq[j]
             zx[j][r]=q_z_chazhi(qxs1[j][r],j,num1[j])
             hs[j][r]=(zss[j][r]+zss[j][r-1])/2.0-zx[j][r]
@@ -241,7 +241,7 @@ if __name__=="__main__":
     sheet1=xlsx.sheets()[0]
 # print(type(sheet1))
 # print(sheet1.cell_value(1,3))
-#加载初始轨迹
+# Load Initial Trajectory
     N4=np.zeros((200,40))
     for i in range(1,13):
         V[0][i]=float(sheet1.cell_value(4,i))
